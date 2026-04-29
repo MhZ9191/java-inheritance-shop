@@ -12,7 +12,7 @@ public class Smartphone extends Prodotto {
 
     public Smartphone(String name,String brand,BigDecimal price,BigDecimal iva,String imei,int memory){
         super(name,brand,price,iva);
-        if(imei!=null&&imei.trim()!=""){
+        if(imei!=null&&imei.trim().isEmpty()){
             this.imei=imei;
         }
         if(memory>0){
@@ -27,7 +27,7 @@ public class Smartphone extends Prodotto {
     }
 
     public void setImei(String imei){
-        if(imei!=null&&imei.trim()!=""){
+        if(imei!=null&&imei.trim().isEmpty()){
             this.imei=imei;
         }
     }

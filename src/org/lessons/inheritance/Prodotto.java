@@ -7,21 +7,21 @@ import java.math.RoundingMode;
 
 public class Prodotto {
   
-protected int code;
-protected String name;
-protected String brand;
-protected BigDecimal price;
-protected BigDecimal iva;
+private int code;
+private String name;
+private String brand;
+private BigDecimal price;
+private BigDecimal iva;
 
 //COSTRUTTORE
 public Prodotto(String name,String brand,BigDecimal price,BigDecimal iva){
     Random rnd = new Random();
     this.code=rnd.nextInt(1000,9999)*rnd.nextInt(10,20);
-    if(name!=null&&name.trim()!=""){
+    if(name!=null&&name.trim().isEmpty()){
         this.name=name;
     }
 
-    if(brand!=null&&brand.trim()!=""){
+    if(brand!=null&&brand.trim().isEmpty()){
         this.brand=brand;
     }
 
@@ -45,7 +45,7 @@ public String getName(){
 }
 
 public void setName(String name){
-    if(name!=null&&name.trim()!=""){
+    if(name!=null&&name.trim().isEmpty()){
         this.name=name;
     }
 }
@@ -55,7 +55,7 @@ public String getBrand(){
 }
 
 public void setBrand(String brand){
-    if(brand!=null&&brand.trim()!=""){
+    if(brand!=null&&brand.trim().isEmpty()){
         this.brand=brand;
     }
 }

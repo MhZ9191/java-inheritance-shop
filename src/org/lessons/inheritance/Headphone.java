@@ -32,7 +32,7 @@ public class Headphone extends Prodotto {
 
     public void setColor(String color){
         if(color!=null &&
-           color.trim()!="" &&
+           color.trim().isEmpty() &&
            Arrays.asList(colors).contains(color)){
             this.color=color;
         }
