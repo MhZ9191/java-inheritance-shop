@@ -7,11 +7,11 @@ import java.math.RoundingMode;
 
 public class Prodotto {
   
-private int code;
-private String name;
-private String brand;
-private BigDecimal price;
-private BigDecimal iva;
+protected int code;
+protected String name;
+protected String brand;
+protected BigDecimal price;
+protected BigDecimal iva;
 
 //COSTRUTTORE
 public Prodotto(String name,String brand,BigDecimal price,BigDecimal iva){
