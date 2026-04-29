@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class Main {
     public static void main(String[] args) {
         
-        // Prodotto test = new Prodotto("jasmin","diesel",new BigDecimal("10"),new BigDecimal("22"));
+        // Prodotto test = new Prodotto("Hello","World",new BigDecimal("10"),new BigDecimal("22"));
         // System.out.println(test.totalPrice());
     
         Smartphone cellulare = new Smartphone("n-213", "nokia", new BigDecimal("150"), new BigDecimal("22"), "CD-12323-AFK", 12);
@@ -15,5 +15,9 @@ public class Main {
         TV televisore = new TV("SM-M13","samsung",new BigDecimal("1340.34"),new BigDecimal("22"),134.21F,100.00F,true);
         System.out.printf("televisore %s prezzo : %.2f%n",televisore.getName(),televisore.totalPrice());
         System.out.printf("televisore %s is smart : %s%n",televisore.getName(),televisore.getIsSmart());
+    
+        Headphone cuffie = new Headphone("A-23VB","ASTRO",new BigDecimal("89.99"),new BigDecimal("22"),"red",false);
+        System.out.printf("cuffie %s prezzo : %.2f%n",cuffie.getName(),cuffie.totalPrice());
+        System.out.printf("cuffie %s color : %s%n",cuffie.getName(),cuffie.getColor());
     }
 }
