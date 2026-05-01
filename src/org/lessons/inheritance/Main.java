@@ -12,10 +12,6 @@ public class Main {
         System.out.printf("smartphone %s prezzo: %.2f%n",cellulare.getName(),cellulare.totalPrice());
         System.out.printf("smartphone %s IMEI : %s%n",cellulare.getName(),cellulare.getImei());
 
-        TV televisore = new TV("SM-M13","samsung",new BigDecimal("1340.34"),new BigDecimal("22"),134.21F,100.00F,true);
-        System.out.printf("televisore %s prezzo : %.2f%n",televisore.getName(),televisore.totalPrice());
-        System.out.printf("televisore %s is smart : %s%n",televisore.getName(),televisore.getIsSmart());
-    
         Headphone cuffie = new Headphone("A-23VB","ASTRO",new BigDecimal("89.99"),new BigDecimal("22"),"red",false);
         System.out.printf("cuffie %s prezzo : %.2f%n",cuffie.getName(),cuffie.totalPrice());
         System.out.printf("cuffie %s color : %s%n",cuffie.getName(),cuffie.getColor());

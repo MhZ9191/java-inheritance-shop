@@ -17,11 +17,11 @@ private BigDecimal iva;
 public Prodotto(String name,String brand,BigDecimal price,BigDecimal iva){
     Random rnd = new Random();
     this.code=rnd.nextInt(1000,9999)*rnd.nextInt(10,20);
-    if(name!=null&&name.trim().isEmpty()){
+    if(name!=null&&!name.trim().isEmpty()){
         this.name=name;
     }
 
-    if(brand!=null&&brand.trim().isEmpty()){
+    if(brand!=null&&!brand.trim().isEmpty()){
         this.brand=brand;
     }
 
@@ -45,7 +45,7 @@ public String getName(){
 }
 
 public void setName(String name){
-    if(name!=null&&name.trim().isEmpty()){
+    if(name!=null&&!name.trim().isEmpty()){
         this.name=name;
     }
 }
@@ -55,7 +55,7 @@ public String getBrand(){
 }
 
 public void setBrand(String brand){
-    if(brand!=null&&brand.trim().isEmpty()){
+    if(brand!=null&&!brand.trim().isEmpty()){
         this.brand=brand;
     }
 }
@@ -84,6 +84,16 @@ public void setIva(BigDecimal iva){
 //METODI AGGIUNTIVI
 public BigDecimal totalPrice(){
     return this.price.add(this.price.multiply(iva).divide(new BigDecimal("100"))).setScale(2,RoundingMode.DOWN);
+}
+
+@Override
+public String toString(){
+    return String.format("nome:%s %nbrand:%s%nprezzo:%.2f%niva:%.0f%n",this.name,this.brand,this.price,this.iva);
+}
+
+public BigDecimal calculate(boolean isPromo,Prodotto prodotto){
+    return isPromo ? this.price.multiply(new BigDecimal("2")).divide(new BigDecimal("100")).add(this.price.multiply(getIva()).divide(new BigDecimal("100"))) :
+    this.price.add(this.price.multiply(getIva()).divide(new BigDecimal("100")));
 }
 
 }
